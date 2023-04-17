@@ -4,6 +4,8 @@
     --color-3: #62929e;
     --color-4: #fdfdff;
     --color-5: #c6c5b9;
+
+    --size: 23px;
 }
 
 
@@ -42,7 +44,7 @@ h1 {
 }
 
 #month-label {
-    font-size: 25px;
+    font-size: calc(var(--size) + 2px);
     margin-right: 5px;
 }
 
@@ -63,12 +65,12 @@ h1 {
 }
 
 #day-label {
-    font-size: 25px;
+    font-size: calc(var(--size) + 2px);
 }
 
 input,
 select {
-    font-size: 23px;
+    font-size: var(--size);
     color: var(--color-2);
     background-color: var(--color-3);
 
@@ -83,7 +85,7 @@ select {
 
 #calc {
     color: var(--color-2);
-    font-size: 23px;
+    font-size: var(--size);
     background-color: var(--color-3);
     border-radius: 3px;
     border: 1px solid var(--color-1);
@@ -95,4 +97,65 @@ select {
 #result {
     font-size: 40px;
     margin-top: 10px;
+}
+
+
+@media screen and (max-width: 600px) {
+    :root {
+        --size: 18px
+    }
+
+    h1 {
+        font-size: 50px;
+    }
+
+    #calc {
+        padding: 10px;
+    }
+
+    .row {
+        width: 250px;
+    }
+
+    #month,
+    #weekday {
+        width: 140px;
+    }
+
+    #day {
+        width: 134px;
+    }
+}
+
+@media screen and (max-width: 375px) {
+    :root {
+        --size: 16px
+    }
+
+    h1 {
+        font-size: 40px;
+    }
+
+    #calc {
+        padding: 10px;
+    }
+
+    .row {
+        width: 200px;
+    }
+
+    #month,
+    #weekday {
+        width: 120px;
+    }
+
+    #day {
+        width: 114px;
+    }
+}
+
+@media screen and (max-width: 300px) {
+    h1 {
+        font-size: 35px;
+    }
 }
